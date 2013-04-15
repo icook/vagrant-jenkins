@@ -2,6 +2,15 @@
 
 This repo spins up a VM instance with Jenkins ready to be used for Rails applications.
 
+# Basebox
+
+The VirtualBox basebox is based off the stadnard precise64 basebox, with the following changes:
+
+- Upgraded all gems, including chef
+- Upgraded Ubuntu (14th April 2013)
+- Switched locale and timezone to Sydney, Australia
+- Switched apt to an Australian mirror
+
 ## Pre-installed Packages
 
 The following are installed as the base for a typical Rails application:
