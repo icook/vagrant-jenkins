@@ -18,7 +18,6 @@ Vagrant.configure("2") do |config|
     chef.add_recipe "postgresql::server"
     chef.add_recipe "ruby_build"
     chef.add_recipe "rbenv::user"
-    chef.add_recipe "nginx"
     chef.add_recipe "mysql::server"
     chef.add_recipe "java"
     chef.add_recipe "jenkins"
@@ -86,6 +85,10 @@ Vagrant.configure("2") do |config|
         :server_root_password   => "",
         :server_repl_password   => "",
         :server_debian_password => "",
+        :remove_annoymous_users => true,
+        :remove_test_datebase   => true,
+        :allow_remote_root      => false,
+
         :service_name           => "mysql",
         :basedir                => "/usr",
         :data_dir               => "/var/lib/mysql",
@@ -97,15 +100,6 @@ Vagrant.configure("2") do |config|
         :socket                 => "/var/run/mysqld/mysqld.sock",
         :pid_file               => "/var/run/mysqld/mysqld.pid",
         :grants_path            => "/etc/mysql/grants.sql"
-      },
-      :nginx      => {
-        :dir                => "/etc/nginx",
-        :log_dir            => "/var/log/nginx",
-        :binary             => "/usr/sbin/nginx",
-        :user               => "www-data",
-        :init_style         => "runit",
-        :pid                => "/var/run/nginx.pid",
-        :worker_connections => "1024"
       }
     }
   end
