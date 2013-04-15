@@ -5,6 +5,7 @@
 
 Vagrant.configure("2") do |config|
   config.vm.box = "precise64-au-syd"
+  config.vm.box_url = "https://www.dropbox.com/s/yrr3cnhlq8x6vl4/precise64-au-syd.box?dl=1"
   config.vm.hostname = "jenkins"
   config.vm.network :forwarded_port, guest: 8080, host: 8080
   config.vm.network :private_network, ip: "192.168.100.1"
