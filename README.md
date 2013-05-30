@@ -30,7 +30,7 @@ Jenkins is running on the default 8080 port, and is not being proxied behind a w
 
     gem install librarian-chef
 
-3. Run `librarian install` to pull down the required cookbooks
+3. Run `librarian-chef install` to pull down the required cookbooks
 4. Run `vagrant up` to start the VM and the chef boostrap process
 
 ## License
